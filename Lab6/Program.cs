@@ -13,30 +13,26 @@ namespace Lab6
 
             do
             {
-
-
                 Console.WriteLine("Welcome to the Pig Latin Translator!\n");
                 Console.WriteLine("Enter a line to be translated: \n");
                 string word = Console.ReadLine().ToLower();
-                //created an indexofany to show the number of characters a word has before the first vowel in said word, if index is -1 there is NO vowel in beginning
+                //created an indexofany to show the number of characters a word has before the first vowel in said word
                 char[] vowels = { 'a', 'e', 'i', 'o', 'u', 'y' };
                 int index = word.IndexOfAny(vowels);
 
-
-                //started with this awful way of checking if word starts with vowel
+                //check if word starts with vowel
                 if ((word.StartsWith("a")) || (word.StartsWith("e")) || (word.StartsWith("i")) || (word.StartsWith("o")) || (word.StartsWith("u")))
                 {
                     Console.WriteLine(word + "way");
                 }
 
-                else //if (index == -1)
+                else //if (index == -1)  
                 {
                     string removedConsonants = word.Substring(index);
                     string con = (word.Substring(0, index));
-                    Console.WriteLine(removedConsonants + con + "ay");
-
-
+                    Console.WriteLine(removedConsonants + con + "ay\n");
                 }
+
                 Console.WriteLine("Do you wish to continue?:  ");
 
             } while (Console.ReadLine().ToUpper() == "YES");
